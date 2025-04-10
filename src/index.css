@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,11 +43,11 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* MSP Theme Colors */
+    /* MSP Theme Colors - Converting hex to HSL for CSS variables */
     --color-bg-primary: 0 0% 100%; /* White */
-    --color-text-dark: 0 0% 0%; /* Black */
-    --color-accent: 26 42% 25%; /* Dark Brown */
-    --color-secondary: 48 28% 92%; /* Ivory */
+    --color-text-dark: 0 0% 11%; /* Dark black-brown */ 
+    --color-accent: 26 37% 41%; /* Light brown */
+    --color-secondary: 27 85% 67%; /* Warm orange */
   }
 
   .dark {

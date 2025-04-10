@@ -1,5 +1,5 @@
-
 import type { Config } from "tailwindcss";
+import { COLORS } from "./src/lib/color_variable";
 
 export default {
 	darkMode: ["class"],
@@ -63,12 +63,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// MSP Theme Colors
+				// MSP Theme Colors - using our color variables
 				msp: {
-					'white': 'hsl(var(--color-bg-primary))',
-					'black': 'hsl(var(--color-text-dark))',
-					'dark-brown': 'hsl(var(--color-accent))',
-					'ivory': 'hsl(var(--color-secondary))'
+					'white': COLORS.background,
+					'black': COLORS.primaryText,
+					'dark-brown': COLORS.accent,
+					'ivory': COLORS.button
 				}
 			},
 			borderRadius: {

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Mail, Phone, Send } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -19,24 +20,46 @@ const ContactSection = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // Insert data into Supabase
+      const { error } = await supabase
+        .from('hire_requests')
+        .insert({
+          full_name: formData.name,
+          email: formData.email,
+          company: formData.subject, // Using subject field as company
+          description: formData.message,
+          budget: null // Optional field left as null for now
+        });
+      
+      if (error) throw error;
+      
       toast({
         title: "Message Sent",
         description: "Thanks for reaching out! I'll get back to you soon.",
       });
+      
+      // Reset form after successful submission
       setFormData({
         name: '',
         email: '',
         subject: '',
         message: ''
       });
-    }, 1500);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Submission Failed",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

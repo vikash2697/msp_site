@@ -44,7 +44,7 @@ const serviceCategories: ServiceCategory[] = [
     title: "End-User Computing",
     description: "Support and management for your end-user environments",
     icon: <Monitor className="w-10 h-10 text-msp-dark-brown" />,
-    items: ["Remote Support", "VDI", "MDM", "Desktop Support", "Workspace Mgmt"]
+    items: ["Remote IT Support", "VDI", "MDM", "Desktop Support", "Workspace Management"]
   },
   {
     title: "Networking",
@@ -84,10 +84,10 @@ const ServicesSection = () => {
               >
                 <div className="mb-4">{category.icon}</div>
                 <h3 className="text-xl font-semibold mb-2">{category.title}</h3>
-                <p className="text-msp-black/70 mb-4">{category.description}</p>
+                <p className="text-msp-black/70 mb-4 text-base">{category.description}</p>
                 <ul className="space-y-2">
                   {category.items.map((item) => (
-                    <li key={item} className="flex items-center">
+                    <li key={item} className="flex items-center text-base">
                       <span className="w-2 h-2 bg-msp-dark-brown rounded-full mr-2"></span>
                       <span>{item}</span>
                     </li>

@@ -37,16 +37,15 @@ const Index = () => {
   }, []);
 
   // Schema.org JSON-LD structured data
-  const personSchema = {
+  const companySchema = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Vishal",
-    "url": "https://yourwebsite.com",
-    "jobTitle": "DevOps Expert & Cloud Architect",
-    "description": "Solutions Architect & DevOps Expert specializing in cloud infrastructure, automation and security",
+    "@type": "Organization",
+    "name": "Rustyt",
+    "url": "https://rustyt.com",
+    "description": "Solutions Architect & DevOps Experts specializing in cloud infrastructure, automation and security",
     "sameAs": [
-      "https://github.com/vishal", // Replace with actual links
-      "https://linkedin.com/in/vishal"
+      "https://github.com/rustyt", // Replace with actual links
+      "https://linkedin.com/company/rustyt"
     ],
     "knowsAbout": ["Cloud Architecture", "DevOps", "IT Automation", "System Administration", "Infrastructure as Code"]
   };
@@ -54,12 +53,12 @@ const Index = () => {
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Vishal MSP Services",
+    "name": "Rustyt's MSP Services",
     "description": "Reliable MSP services tailored for small businesses, startups, and tech teams",
-    "url": "https://yourwebsite.com",
+    "url": "https://rustyt.com",
     "sameAs": [
-      "https://github.com/vishal", // Replace with actual links
-      "https://linkedin.com/in/vishal"
+      "https://github.com/rustyt", // Replace with actual links
+      "https://linkedin.com/company/rustyt"
     ],
     "serviceType": ["Cloud Services", "DevOps", "Automation", "Security", "System Administration"],
     "areaServed": {
@@ -84,12 +83,12 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>Vishal - DevOps Expert & Cloud Architect | MSP Services</title>
-        <meta name="description" content="Expert DevOps, Cloud Architecture, and IT Automation services by Vishal. Reliable MSP solutions for small businesses, startups, and tech teams." />
+        <title>Rustyt - DevOps Experts & Cloud Architects | MSP Services</title>
+        <meta name="description" content="Expert DevOps, Cloud Architecture, and IT Automation services by Rustyt. Reliable MSP solutions for small businesses, startups, and tech teams." />
         
         {/* Schema.org structured data */}
         <script type="application/ld+json">
-          {JSON.stringify(personSchema)}
+          {JSON.stringify(companySchema)}
         </script>
         <script type="application/ld+json">
           {JSON.stringify(businessSchema)}

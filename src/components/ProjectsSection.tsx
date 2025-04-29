@@ -49,12 +49,12 @@ const ProjectsSection = () => {
             <Carousel className="w-full max-w-5xl mx-auto">
               <CarouselContent>
                 {projects.map((project, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2 sm:basis-full">
                     <div className="p-1">
-                      <Card className="border border-msp-dark-brown/10">
+                      <Card className="border border-msp-dark-brown/10 h-full">
                         <CardHeader>
                           <CardTitle className="text-xl text-msp-dark-brown">{project.title}</CardTitle>
-                          <CardDescription>{project.description}</CardDescription>
+                          <CardDescription className="text-base">{project.description}</CardDescription>
                         </CardHeader>
                         <CardContent>
                           <div className="flex flex-wrap gap-2">
@@ -66,7 +66,7 @@ const ProjectsSection = () => {
                           </div>
                         </CardContent>
                         <CardFooter>
-                          <button className="flex items-center text-msp-dark-brown hover:underline">
+                          <button className="flex w-full justify-center items-center py-2 text-msp-dark-brown hover:underline min-h-[44px]">
                             <span>View details</span>
                             <ExternalLink className="ml-1 h-4 w-4" />
                           </button>
@@ -76,9 +76,9 @@ const ProjectsSection = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <div className="flex justify-center mt-8">
-                <CarouselPrevious className="relative mr-4 inset-0 translate-y-0 left-0" />
-                <CarouselNext className="relative ml-4 inset-0 translate-y-0 right-0" />
+              <div className="flex justify-center mt-8 gap-4">
+                <CarouselPrevious className="static transform-none mr-0" />
+                <CarouselNext className="static transform-none ml-0" />
               </div>
             </Carousel>
           </div>

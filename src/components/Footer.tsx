@@ -10,10 +10,10 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <h3 className="text-2xl font-bold">
-              <span className="text-msp-ivory">V</span>ishal
+              <span className="text-msp-ivory">R</span>ustyt
             </h3>
             <p className="mt-2 text-msp-ivory/80 max-w-sm">
-              DevOps Expert & Solutions Architect providing reliable MSP services.
+              DevOps Experts & Solutions Architects providing reliable MSP services.
             </p>
           </div>
           
@@ -35,7 +35,7 @@ const Footer = () => {
         
         <div className="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-sm text-msp-ivory/60">
-            &copy; {currentYear} Vishal's MSP Services. All rights reserved.
+            &copy; {currentYear} Rustyt's MSP Services. All rights reserved.
           </div>
           
           <div className="mt-4 md:mt-0">

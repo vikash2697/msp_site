@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -94,18 +95,36 @@
     @apply border-border;
   }
 
+  html {
+    font-size: 16px; /* Base font size for mobile */
+  }
+
   body {
     @apply bg-msp-white text-msp-black;
+    font-size: 1rem; /* 16px base font size */
+    line-height: 1.6;
   }
   
   h1, h2, h3, h4 {
     @apply font-semibold;
   }
+  
+  /* Added for better touch targets and mobile usability */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Responsive images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 @layer components {
   .section-spacing {
-    @apply py-16 md:py-24;
+    @apply py-12 md:py-16 lg:py-24;
   }
   
   .container-padding {
@@ -113,7 +132,7 @@
   }
   
   .btn-primary {
-    @apply bg-msp-dark-brown text-white px-6 py-3 rounded-md hover:opacity-90 transition-opacity font-medium;
+    @apply bg-msp-dark-brown text-white px-6 py-3 rounded-md hover:opacity-90 transition-opacity font-medium min-h-[44px];
   }
   
   .section-title {
@@ -122,5 +141,20 @@
   
   .section-subtitle {
     @apply text-xl md:text-2xl font-semibold mb-4 md:mb-6;
+  }
+
+  /* Mobile-friendly adjustments */
+  @media (max-width: 768px) {
+    .section-title {
+      @apply text-2xl mb-4;
+    }
+    
+    .section-subtitle {
+      @apply text-lg mb-3;
+    }
+    
+    .btn-primary {
+      @apply w-full flex justify-center items-center;
+    }
   }
 }

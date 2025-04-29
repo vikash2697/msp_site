@@ -40,6 +40,19 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  // Close menu when clicking outside on mobile
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (isOpen && !target.closest('header')) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isOpen]);
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -48,7 +61,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="font-bold text-2xl text-msp-black">
-          <span className="text-msp-dark-brown">V</span>ishal
+          <span className="text-msp-dark-brown">R</span>ustyt
         </Link>
 
         {/* Desktop Navigation */}
@@ -84,7 +97,7 @@ const Navbar = () => {
           <Button 
             asChild
             variant="default"
-            className="bg-msp-dark-brown hover:opacity-90 transition-opacity text-white mr-4"
+            className="bg-msp-dark-brown hover:opacity-90 transition-opacity text-white mr-4 min-w-[44px] min-h-[44px]"
             size="sm"
           >
             <a href="#contact" className="inline-flex items-center">
@@ -93,7 +106,7 @@ const Navbar = () => {
             </a>
           </Button>
           <button
-            className="text-msp-black"
+            className="text-msp-black min-w-[44px] min-h-[44px] flex items-center justify-center"
             onClick={toggleMenu}
             aria-label={isOpen ? 'Close Menu' : 'Open Menu'}
           >
@@ -110,10 +123,22 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`text-msp-black hover:text-msp-dark-brown transition-colors py-2 ${
+                className={`text-msp-black hover:text-msp-dark-brown transition-colors py-4 text-lg ${
                   activeSection === link.id ? 'text-msp-dark-brown font-medium' : ''
                 }`}
-                onClick={toggleMenu}
+                onClick={() => {
+                  toggleMenu();
+                  // Allow the hash navigation to happen after menu closes
+                  setTimeout(() => {
+                    const element = document.querySelector(link.href);
+                    if (element) {
+                      window.scrollTo({
+                        top: element.getBoundingClientRect().top + window.scrollY - 80,
+                        behavior: 'smooth'
+                      });
+                    }
+                  }, 100);
+                }}
               >
                 {link.name}
                 {activeSection === link.id && (

@@ -60,7 +60,7 @@ const ContactSection = () => {
       
       toast({
         title: "Message Sent",
-        description: "Thanks for reaching out! I'll get back to you soon.",
+        description: "Thanks for reaching out! We'll get back to you soon.",
       });
       
       // Reset form after successful submission
@@ -91,9 +91,9 @@ const ContactSection = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title text-center">Contact Me</h2>
+          <h2 className="section-title text-center">Contact Us</h2>
           <p className="text-center max-w-2xl mx-auto mb-12 text-lg">
-            Let's discuss how I can support your IT infrastructure or automation needs.
+            Let's discuss how we can support your IT infrastructure or automation needs.
           </p>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
@@ -117,8 +117,8 @@ const ContactSection = () => {
                   </div>
                   <div className="ml-4">
                     <h3 className="font-medium">Email</h3>
-                    <a href="mailto:contact@vishals.com" className="mt-1 block hover:text-msp-dark-brown">
-                      contact@vishals.com
+                    <a href="mailto:contact@rustyt.com" className="mt-1 block hover:text-msp-dark-brown">
+                      contact@rustyt.com
                     </a>
                   </div>
                 </div>
@@ -141,7 +141,7 @@ const ContactSection = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block mb-2 font-medium">Name</label>
+                    <label htmlFor="name" className="block mb-2 font-medium text-base">Name</label>
                     <input
                       type="text"
                       id="name"
@@ -149,13 +149,13 @@ const ContactSection = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-msp-dark-brown/20 rounded-md focus:outline-none focus:ring-2 focus:ring-msp-dark-brown/40"
+                      className="w-full px-4 py-3 min-h-[44px] text-base border border-msp-dark-brown/20 rounded-md focus:outline-none focus:ring-2 focus:ring-msp-dark-brown/40"
                       placeholder="Your name"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block mb-2 font-medium">Email</label>
+                    <label htmlFor="email" className="block mb-2 font-medium text-base">Email</label>
                     <input
                       type="email"
                       id="email"
@@ -163,14 +163,14 @@ const ContactSection = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-msp-dark-brown/20 rounded-md focus:outline-none focus:ring-2 focus:ring-msp-dark-brown/40"
+                      className="w-full px-4 py-3 min-h-[44px] text-base border border-msp-dark-brown/20 rounded-md focus:outline-none focus:ring-2 focus:ring-msp-dark-brown/40"
                       placeholder="Your email"
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block mb-2 font-medium">Subject</label>
+                  <label htmlFor="subject" className="block mb-2 font-medium text-base">Subject</label>
                   <input
                     type="text"
                     id="subject"
@@ -178,13 +178,13 @@ const ContactSection = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-msp-dark-brown/20 rounded-md focus:outline-none focus:ring-2 focus:ring-msp-dark-brown/40"
+                    className="w-full px-4 py-3 min-h-[44px] text-base border border-msp-dark-brown/20 rounded-md focus:outline-none focus:ring-2 focus:ring-msp-dark-brown/40"
                     placeholder="Subject"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block mb-2 font-medium">Message</label>
+                  <label htmlFor="message" className="block mb-2 font-medium text-base">Message</label>
                   <textarea
                     id="message"
                     name="message"
@@ -192,7 +192,7 @@ const ContactSection = () => {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 border border-msp-dark-brown/20 rounded-md focus:outline-none focus:ring-2 focus:ring-msp-dark-brown/40"
+                    className="w-full px-4 py-3 text-base border border-msp-dark-brown/20 rounded-md focus:outline-none focus:ring-2 focus:ring-msp-dark-brown/40"
                     placeholder="Your message"
                   ></textarea>
                 </div>
@@ -201,7 +201,7 @@ const ContactSection = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-primary w-full flex items-center justify-center"
+                    className="btn-primary w-full min-h-[44px] flex items-center justify-center text-base"
                   >
                     {isSubmitting ? (
                       <span>Sending...</span>

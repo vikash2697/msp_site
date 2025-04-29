@@ -25,3 +25,8 @@ export function useMediaQuery(query: string) {
 
   return matches;
 }
+
+// Add backwards compatibility for any existing useIsMobile usage
+export function useIsMobile() {
+  return useMediaQuery('(max-width: 767px)');
+}

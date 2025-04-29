@@ -20,7 +20,7 @@ const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            Solutions Architect & DevOps Expert
+            Enterprise-Grade Cloud & DevOps Solutions
           </motion.h1>
           
           <motion.p 
@@ -29,7 +29,7 @@ const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Reliable MSP services tailored for small businesses, startups, and tech teams.
+            Helping startups and small businesses deploy fast, secure, scalable IT solutions globally.
           </motion.p>
           
           <motion.p 
@@ -38,7 +38,7 @@ const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            Get expert support in cloud, automation, security, and remote IT.
+            Rustyt specializes in cloud architecture, automation, security, and comprehensive IT management.
           </motion.p>
           
           <motion.div
@@ -50,7 +50,7 @@ const HeroSection = () => {
               href="#contact" 
               className="btn-primary inline-flex items-center group"
             >
-              <span>Let's work together!</span>
+              <span>Schedule a Consultation</span>
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={18} />
             </a>
           </motion.div>

@@ -11,23 +11,27 @@ const AboutSection = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title text-center">About Me</h2>
+          <h2 className="section-title text-center">About Rustyt</h2>
           
           <div className="max-w-4xl mx-auto">
             <p className="text-lg leading-relaxed mb-6">
-              I'm Vishal, a top-rated freelancer with 98% job success on Upwork, specializing in 
+              Rustyt is a premier technology services company specializing in 
               scalable cloud architecture, secure networks, and DevOps automation. 
+              Our team delivers enterprise-grade solutions that optimize performance, 
+              enhance security, and streamline operations.
             </p>
             
             <p className="text-lg leading-relaxed mb-6">
-              I've completed over 1,300 hours across 87 projects, helping clients 
-              optimize infrastructure, improve security, and automate deployments.
+              With over 1,300 hours of service across 87 successful projects, 
+              Rustyt has established a reputation for technical excellence and 
+              reliability. Our company has helped clients in fintech, edtech, 
+              media, e-commerce, and healthcare build scalable, secure IT environments.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
               <div className="bg-msp-white p-6 rounded-lg shadow-md">
-                <div className="text-3xl font-bold text-msp-dark-brown mb-2">98%</div>
-                <div className="text-lg font-medium">Job Success</div>
+                <div className="text-3xl font-bold text-msp-dark-brown mb-2">100%</div>
+                <div className="text-lg font-medium">Client Satisfaction</div>
               </div>
               
               <div className="bg-msp-white p-6 rounded-lg shadow-md">
